@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class Book {
+public class Book extends BaseEntity {
 
     private String name;
     private String isbn;
