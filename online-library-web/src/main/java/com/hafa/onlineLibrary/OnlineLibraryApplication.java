@@ -1,4 +1,4 @@
-package com.hafa.OnlineLibrary;
+package com.hafa.onlineLibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
