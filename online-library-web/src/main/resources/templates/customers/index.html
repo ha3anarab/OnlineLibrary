@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+
 <body>
     <!--/*@thymesVar id="customer" type="com.hafa.OnlineLibrary.model.Customer"*/-->
 <h1 th:text="'List of Customers'"></h1>
