@@ -17,7 +17,7 @@ public class CustomerController {
 
 
     @RequestMapping({"", "/", "index", "index.html"})
-    public String CustumerList(Model model) {
+    public String CustomersList(Model model) {
         model.addAttribute("customer", customerService.findAll());
         return "customers/index";
     }
