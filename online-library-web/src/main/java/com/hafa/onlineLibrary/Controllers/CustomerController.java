@@ -1,6 +1,6 @@
 package com.hafa.onlineLibrary.Controllers;
 
-import com.hafa.OnlineLibrary.services.CustomerService;
+import com.hafa.OnlineLibrary.services.springdatajpa.CustomerSDService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    private final CustomerService customerService;
+    private final CustomerSDService customerService;
 
-    public CustomerController(CustomerService customerService) {
+    public CustomerController(CustomerSDService customerService) {
         this.customerService = customerService;
     }
 
