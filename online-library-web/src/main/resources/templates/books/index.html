@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+
+<body>
+<!--/*@thymesVar id="book" type="com.hafa.OnlineLibrary.model.Book"*/-->
+<h1 th:text="'لیست کتاب ها'"></h1>
+<table class="table table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>شناسه</th>
+        <th>نام کتاب</th>
+        <th>قیمت</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${book}">
+        <td th:text="${book.id}">11</td>
+        <td th:text="${book.name}">Animal Farm</td>
+        <td th:text="${book.price}">George Orwell</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+
+<body>
+<!--/*@thymesVar id="author" type="com.hafa.OnlineLibrary.model.Author"*/-->
+<h1 th:text="'لیست نویسنده ها'"></h1>
+<table class="table table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>شناسه</th>
+        <th>نام نویسنده</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="author : ${author}">
+        <td th:text="${author.id}">11</td>
+        <td th:text="${author.firstName+author.lastName}">Animal Farm</td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
