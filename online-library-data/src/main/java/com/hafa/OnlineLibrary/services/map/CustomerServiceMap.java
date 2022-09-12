@@ -4,6 +4,7 @@ import com.hafa.OnlineLibrary.model.Customer;
 import com.hafa.OnlineLibrary.services.CustomerService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -35,6 +36,11 @@ public class CustomerServiceMap extends AbstractMapService<Customer, Long> imple
 
     @Override
     public Customer findByLastName(String lastName) {
+        return null;
+    }
+
+    @Override
+    public List<Customer> findAllByLastNameLike(String lastName) {
         return null;
     }
 }

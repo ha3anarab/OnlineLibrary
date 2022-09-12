@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Profile("springdatajpa")
@@ -55,5 +56,10 @@ public class CustomerSDService implements CustomerService {
     @Override
     public Customer findByLastName(String lastName) {
         return customerRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public List<Customer> findAllByLastNameLike(String lastName) {
+        return customerRepository.findAllByLastNameLike(lastName);
     }
 }

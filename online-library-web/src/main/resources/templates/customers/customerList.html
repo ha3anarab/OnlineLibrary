@@ -8,15 +8,15 @@
     <thead class="table-dark">
     <tr>
         <th>شناسه</th>
-        <th>نام</th>
-        <th>نام خانوادگی</th>
+        <th>نام و نام خانوادگی</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="customer : ${customer}">
         <td th:text="${customer.id}">1</td>
-        <td th:text="${customer.firstName}">hassan</td>
-        <td th:text="${customer.lastName}">arab</td>
+        <td>
+            <a th:href="@{/customer/__${customer.id}__}" th:text="${customer.firstName + ' ' + customer.lastName}">Hassan Arab</a>
+        </td>
     </tr>
     </tbody>
 </table>
