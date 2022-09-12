@@ -25,10 +25,16 @@ public class DataLoader implements CommandLineRunner {
         customer1.setLastName("Arab");
         customerService.save(customer1);
 
+        Customer customer2 = new Customer();
+        customer2.setId(2L);
+        customer2.setFirstName("Hassan");
+        customer2.setLastName("Arab");
+        customerService.save(customer2);
+
         System.out.println("Load DATA ...");
         Set<Customer> all = customerService.findAll();
         for (Customer customer : all) {
-            System.out.println(customer.getId() + customer.getFirstName());
+            System.out.println(customer.getId() + " "+ customer.getFirstName() + " "+ customer.getLastName());
         }
     }
 }
