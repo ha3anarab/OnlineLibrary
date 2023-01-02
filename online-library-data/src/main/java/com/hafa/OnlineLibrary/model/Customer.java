@@ -1,8 +1,8 @@
 package com.hafa.OnlineLibrary.model;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +15,7 @@ import java.util.Set;
 public class Customer extends Person {
 
     @Builder
-    public Customer(Long id,String firstName, String lastName, String address, String phoneNumber, Set<Book> borrowedBooks) {
+    public Customer(Long id, String firstName, String lastName, String address, String phoneNumber, Set<Book> borrowedBooks) {
         super(id, firstName, lastName);
         this.address = address;
         this.phoneNumber = phoneNumber;

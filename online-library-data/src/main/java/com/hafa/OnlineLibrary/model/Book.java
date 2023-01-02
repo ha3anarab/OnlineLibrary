@@ -1,8 +1,8 @@
 package com.hafa.OnlineLibrary.model;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -14,7 +14,7 @@ import java.util.Date;
 public class Book extends BaseEntity {
 
     @Builder
-    public Book(Long id,String name, String isbn, Author author, Date printDate, Double price, String description, Customer borrowedPerson) {
+    public Book(Long id, String name, String isbn, Author author, Date printDate, Double price, String description, Customer borrowedPerson) {
         this.setId(id);
         this.name = name;
         this.isbn = isbn;
