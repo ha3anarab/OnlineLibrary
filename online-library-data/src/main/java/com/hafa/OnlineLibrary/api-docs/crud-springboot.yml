@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  title: Swagger CRUD Springboot - OpenAPI 3.0
+
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: localhost:8080/api/v1
+
+paths:
+  /student:
+    put:
+      tags:
+        - student
+      summary: Update an existing student
+      description: Update an existing student by Id
+      operationId: updateStudent
+      requestBody:
+        description: Update an existent student
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Student"
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+
+        "400":
+          description: Invalid id
+        "404":
+          description: Student not found
+
+  /student/add:
+    post:
+      tags:
+        - student
+      summary: Add a new student
+      description: Add a new student
+      operationId: addStudent
+      requestBody:
+        description: Create a new student
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StudentRequest"
+        required: true
+
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+
+  /student/findById/{studentId}:
+    get:
+      tags:
+        - student
+      summary: Find a student by id
+      description: A student could be found with given student id.
+      operationId: findStudentById
+      parameters:
+        - name: studentId
+          in: path
+          description: Student id to to find
+          required: true
+          schema:
+            type: integer
+            format: int64
+
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+        "404":
+          description: Student not found
+
+        "400":
+          description: Invalid id
+
+  /student/findAll:
+    get:
+      tags:
+        - student
+      summary: Find all of students
+      description: A list of students could be found.
+      operationId: findAll
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Student"
+
+  /student/{studentId}:
+    delete:
+      tags:
+        - student
+      summary: Deletes a student
+      description: delete a student
+      operationId: deleteStudent
+      parameters:
+        - name: studentId
+          in: path
+          description: Student id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Successful operation
+        "400":
+          description: Invalid id
+
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: James
+        email:
+          type: string
+          example: john@email.com
+
+    StudentRequest:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: James
+        email:
+          type: string
+          example: john@email.com
+
+  requestBodies:
+    Student:
+      description: Student object that needs to be added to the database
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Student"
+
+    StudentRequestBody:
+      description: Student request body for add api
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/StudentRequest"
