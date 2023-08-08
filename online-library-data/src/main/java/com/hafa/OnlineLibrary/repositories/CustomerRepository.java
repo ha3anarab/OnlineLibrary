@@ -1,11 +1,13 @@
 package com.hafa.OnlineLibrary.repositories;
 
 import com.hafa.OnlineLibrary.model.Customer;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     Customer findByLastName(String lastName);
     List<Customer> findAllByLastNameLike(String lastName);

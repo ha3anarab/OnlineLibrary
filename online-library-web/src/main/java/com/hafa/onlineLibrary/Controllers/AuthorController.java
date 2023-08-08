@@ -3,6 +3,7 @@ package com.hafa.onlineLibrary.Controllers;
 import com.hafa.OnlineLibrary.services.springdatajpa.AuthorSDService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,7 +17,7 @@ public class AuthorController {
     }
 
 
-    @RequestMapping({"", "/", "index", "index.html"})
+    @GetMapping({"", "/", "index", "index.html"})
     public String AuthorsList(Model model) {
         model.addAttribute("author", authorService.findAll());
         return "authors/index";

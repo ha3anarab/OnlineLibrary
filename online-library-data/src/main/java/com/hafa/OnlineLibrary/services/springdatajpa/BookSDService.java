@@ -2,7 +2,6 @@ package com.hafa.OnlineLibrary.services.springdatajpa;
 
 import com.hafa.OnlineLibrary.model.Book;
 import com.hafa.OnlineLibrary.repositories.BookRepository;
-import com.hafa.OnlineLibrary.services.CrudService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

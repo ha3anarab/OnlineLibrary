@@ -1,4 +1,4 @@
-package com.hafa.OnlineLibrary.services;
+package com.hafa.OnlineLibrary.services.springdatajpa;
 
 import java.util.Set;
 

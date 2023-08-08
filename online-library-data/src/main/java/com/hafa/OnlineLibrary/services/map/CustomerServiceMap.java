@@ -1,7 +1,7 @@
 package com.hafa.OnlineLibrary.services.map;
 
 import com.hafa.OnlineLibrary.model.Customer;
-import com.hafa.OnlineLibrary.services.CustomerService;
+import com.hafa.OnlineLibrary.services.springdatajpa.CustomerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

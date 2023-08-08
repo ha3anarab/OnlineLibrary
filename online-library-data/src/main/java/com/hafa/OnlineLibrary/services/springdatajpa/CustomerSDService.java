@@ -3,7 +3,6 @@ package com.hafa.OnlineLibrary.services.springdatajpa;
 import com.hafa.OnlineLibrary.model.Customer;
 import com.hafa.OnlineLibrary.repositories.BookRepository;
 import com.hafa.OnlineLibrary.repositories.CustomerRepository;
-import com.hafa.OnlineLibrary.services.CustomerService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -28,9 +27,7 @@ public class CustomerSDService implements CustomerService {
 
     @Override
     public Set<Customer> findAll() {
-        Set<Customer> customers = new HashSet<>();
-        customerRepository.findAll().forEach(customers::add);
-        return customers;
+        return new HashSet<>(customerRepository.findAll());
     }
 
     @Override

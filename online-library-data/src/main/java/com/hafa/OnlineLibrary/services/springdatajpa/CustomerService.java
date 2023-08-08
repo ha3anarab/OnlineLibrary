@@ -1,4 +1,4 @@
-package com.hafa.OnlineLibrary.services;
+package com.hafa.OnlineLibrary.services.springdatajpa;
 
 import com.hafa.OnlineLibrary.model.Customer;
 
